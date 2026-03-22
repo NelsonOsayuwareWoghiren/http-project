@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>History of HTTP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Nav Bar -->
+<nav>
+<ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="history.html"><i class="fas fa-clock"></i> History</a></li>
+        <li><a href="versions.html"><i class="fas fa-code"></i> Versions</a></li>
+        <li><a href="concepts.html"><i class="fas fa-lightbulb"></i> Concepts</a></li>
+        <li><a href="references.html"><i class="fas fa-book"></i> References</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><button id="darkModeToggle" title="Toggle Dark Mode">Dark Mode?🌙</button></li>
+</ul>
+    </ul>
+</nav>
+
+<h1>History of HTTP</h1>
+
+<p>
+    HTTP was founded and created by Tim Berners-Lee in the early 1990s at CERN.
+</p>
+
+<h2>Early Development</h2>
+<p>
+    The first version (HTTP/0.9) only supported simple basic document retrieval.
+</p>
+
+<h2>Growth of the Web</h2>
+<p>
+    HTTP/1.0 introduced headers and status codes, which allowed more complex communication.
+</p>
+<h2>Network Communication</h2>
+
+<p>
+    HTTP works by connecting devices like computers, routers, and servers across multiple networks.
+</p>
+
+<img src="images/internet-diagram.png" alt="Network Diagram">
+
+<p style="text-align:center;"><em>Figure: Devices communicating over a network</em></p>
+
+<footer>
+    <p>IT 3203 Project</p>
+</footer>
+
+<script>
+const toggle = document.getElementById('darkModeToggle');
+
+ // Activate dark mode if active already
+if(localStorage.getItem('darkMode') === 'enabled'){
+    document.body.classList.add('dark-mode');
+}
+
+// Toggle dark mode if button is clicked
+toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    if(document.body.classList.contains('dark-mode')){
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+    localStorage.setItem('darkMode', 'disabled');
+    }
+});
+</script>
+</body>
+</html>

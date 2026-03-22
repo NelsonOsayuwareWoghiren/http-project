@@ -1,0 +1,256 @@
+/* Base styles for body and smooth scrolling*/
+
+body {
+font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    background: linear-gradient(to right, #e3f2fd, #ffffff);
+    color: #333;
+    transition: background 0.5s, color 0.5s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: #0d47a1;
+    padding: 15px;
+    margin: 0;
+    transition: background-color 0.5s;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* hover underline effect, very neat*/
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: yellow;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b;
+    transform: scale(1.1);
+}
+/* Dark mode? */
+button#darkModeToggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s, text-shadow 0.3s;
+}
+
+button#darkModeToggle:hover {
+    text-shadow: 0 0 10px #90caf9;
+    transform: scale(1.2);
+}
+/* Header styling */
+header {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #1976d2, #42a5f5, #64b5f6);
+    color: white;
+    transition: background 0.5s;
+}
+
+button#darkModeToggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s, text-shadow 0.3s;
+}
+
+button#darkModeToggle:hover {
+    text-shadow: 0 0 10px #90caf9;
+    transform: scale(1.2);
+}
+
+section {
+    margin: 25px auto;
+    padding: 20px;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    border-left: 5px solid #1976d2;
+}
+
+section:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+ul li {
+    padding: 5px;
+}
+
+/* Table Styling */
+table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: background 0.5s, color 0.5s;
+}
+
+
+th {
+    background-color: #1976d2;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: 25px auto;
+    width: 70%;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05) rotate(0.5deg);
+}
+/* Footer styling */
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #222;
+    color: white;
+    transition: background 0.5s, color 0.5s;
+}
+
+a {
+    color: #1976d2;
+    transition: color 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+button, .button {
+    background: linear-gradient(135deg, #1976d2, #42a5f5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(25,118,210,0.4);
+}
+
+button:hover, .button:hover {
+    background: linear-gradient(135deg, #42a5f5, #64b5f6);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(25,118,210,0.6);
+}
+
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        width: 95%;
+    }
+
+    img {
+        width: 95%;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+body.dark-mode {
+    background: linear-gradient(to right, #121212, #1e1e1e);
+    color: #f1f1f1;
+}
+
+body.dark-mode nav ul {
+    background-color: #0b2545;
+}
+
+body.dark-mode header {
+    background: linear-gradient(to right, #0b2545, #1e3c72);
+}
+
+body.dark-mode section {
+    background: rgba(30,30,30,0.9);
+    border-color: #333;
+    color: #f1f1f1;
+}
+
+body.dark-mode table {
+    background: rgba(30,30,30,0.9);
+    color: #f1f1f1;
+}
+
+body.dark-mode th {
+    background-color: #0b2545;
+}
+
+body.dark-mode footer {
+    background-color: #111;
+    color: #f1f1f1;
+}
+
+body.dark-mode a {
+    color: #90caf9;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

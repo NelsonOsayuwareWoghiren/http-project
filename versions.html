@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTTP Versions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Nav Bar -->
+<nav>
+    <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="history.html"><i class="fas fa-clock"></i> History</a></li>
+        <li><a href="versions.html"><i class="fas fa-code"></i> Versions</a></li>
+        <li><a href="concepts.html"><i class="fas fa-lightbulb"></i> Concepts</a></li>
+        <li><a href="references.html"><i class="fas fa-book"></i> References</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><button id="darkModeToggle" title="Toggle Dark Mode">Dark Mode?🌙</button></li>
+</ul>
+    </ul>
+</nav>
+
+<h1>HTTP Versions</h1>
+
+<table border="1">
+    <tr>
+        <th>Version</th>
+        <th>Year</th>
+        <th>Features</th>
+    </tr>
+    <tr>
+        <td>HTTP/1.0</td>
+        <td>1996</td>
+        <td>Headers, status codes</td>
+    </tr>
+    <tr>
+        <td>HTTP/1.1</td>
+        <td>1997</td>
+        <td>Persistent connections</td>
+    </tr>
+    <tr>
+        <td>HTTP/2</td>
+        <td>2015</td>
+        <td>Multiplexing</td>
+    </tr>
+    <tr>
+        <td>HTTP/3</td>
+        <td>2022</td>
+        <td>QUIC protocol</td>
+    </tr>
+</table>
+
+<h2>How HTTP Works</h2>
+
+<p>
+    HTTP uses a request-response model where a client sends a request to a server,
+    and the server responds with the requested data.
+</p>
+
+<img src="images/http-request-flow.png" alt="HTTP Request and Response Diagram">
+
+<p style="text-align:center;"><em>Figure: HTTP request and response process</em></p>
+
+<script>
+const toggle = document.getElementById('darkModeToggle');
+
+// Activate dark mode if active already
+if(localStorage.getItem('darkMode') === 'enabled'){
+    document.body.classList.add('dark-mode');
+}
+
+// Toggle dark mode if button is clicked
+toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    if(document.body.classList.contains('dark-mode')){
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+    localStorage.setItem('darkMode', 'disabled');
+    }
+});
+</script>
+</body>
+</html>
