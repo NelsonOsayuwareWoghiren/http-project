@@ -112,6 +112,12 @@ section {
     border-left: 5px solid #1976d2;
 }
 
+.page-content {
+    width: 60%;
+    margin: 40px auto;
+    text-align: center;
+}
+
 section:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
